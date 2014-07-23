@@ -26,14 +26,43 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development do
+  gem 'better_errors',         '~> 1.1.0'
+  gem 'pry-rails',             '~> 0.3.2'
+  gem 'term-ansicolor',        '~> 1.3.0'
+  gem 'quiet_assets'
+  gem 'bullet'
+  gem 'meta_request'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development, :test do
+  gem 'binding_of_caller'
+  gem 'pry',         '~> 0.9.12.4'
+  gem 'pry-byebug'
+  gem 'rspec-rails', '~> 2.99.0'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :debug do
+  gem 'byebug', '~> 2.7.0', require: false
+end
+
+group :test do
+  gem 'database_cleaner',       '~> 1.2.0'
+  gem 'factory_girl_rails',     '~> 4.4.0'
+  # gem 'fuubar',                 '~> 1.3.2'
+  # gem 'growl',                  '~> 1.0.3'
+  # gem 'headless',               '~> 1.0.1'
+  # gem 'launchy',                '~> 2.4.2'
+  # gem 'rack_session_access',    '~> 0.1.1'
+  # gem 'rb-fsevent',             '~> 0.9.4'
+  # gem 'response_code_matchers', '~> 0.0.3'
+  # gem 'rspec-json_matcher',     '~> 0.1.2'
+  # gem 'simplecov',              '~> 0.8.2', require: false
+  # gem 'simplecov-rcov',         '~> 0.2.3', require: false
+  # gem 'timecop',                '~> 0.7.1'
+  # gem 'vcr',                    '~> 2.8.0'
+  gem 'webmock',                '~> 1.17.0'
+end
